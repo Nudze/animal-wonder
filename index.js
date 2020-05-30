@@ -1,6 +1,7 @@
 const express = require("express"),
 	mongoose = require("mongoose"),
 	passport = require("passport"),
+	flash = require("connect-flash"),
 	LocalStrategy = require("passport-local"),
 	methodOverride = require("method-override");
 
@@ -22,6 +23,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+app.use(flash());
 
 // Passport configuration
 app.use(
