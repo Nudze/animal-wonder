@@ -6,7 +6,7 @@ const passport = require("passport");
 const User = require("../models/user");
 
 router.get("/", (req, res) => {
-	res.render("home");
+	res.render("landing");
 });
 
 router.get("/register", (req, res) => {
