@@ -1,0 +1,13 @@
+<%- include("../partials/header") %>
+
+
+
+<form action="/animals/<%= animalID %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+    <textarea name="comment[content]" id="" cols="30" rows="10"><%= comment.content %></textarea>
+    <button>Submit</button>
+</form>
+
+<a href="/animals">Back</a>
+
+
+<%- include("../partials/footer") %>

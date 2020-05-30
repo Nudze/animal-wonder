@@ -1,0 +1,20 @@
+<%- include("../partials/header") %>
+
+
+<div class="jumbotron">
+    <h1>A Collection With Fascinating Animals</h1>
+    <p>Explore these fascinating creatures.</p>
+    <a href="/animals/new" class="btn btn-info btn-large">Add New Animal</a>
+</div>
+<div class="card-columns">
+    <% for(const animal of animals) { %>
+    <div class="card">
+        <img src="<%= animal.image %>" class="card-img-top" alt="">
+        <h2 class="card-title text-center"><%= animal.name %></h2>
+
+        <a href="/animals/<%= animal._id %>" class="btn btn-info btn-block">More Info</a>
+    </div>
+    <% } %>
+</div>
+
+<%- include("../partials/footer") %>

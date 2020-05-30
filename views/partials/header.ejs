@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-info navbar-expand-md">
+            <div>
+                <a href="/" class="navbar-brand">AnimalWonder</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse"
+                aria-controls="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="navbar-nav justify-content-between collapse navbar-collapse flex-column flex-md-row"
+                id="collapse">
+                <a href="/animals"
+                    class="nav-link <%= typeof page !== "undefined" && page ==="animals" ? "active" : "" %>">Home</a>
+                <div class="nav flex-column align-items-center flex-md-row">
+                    <% if(!user){ %>
+                    <a href="/login"
+                        class="nav-link <%= typeof page !== "undefined" && page ==="login" ? "active" : "" %>">Login</a>
+                    <a href="/register"
+                        class="nav-link <%= typeof page !== "undefined" && page ==="register" ? "active" : "" %>">Sign
+                        up</a>
+                    <% }else{ %>
+                    <a href="/logout" class="nav-link">Logout</a>
+                    <% } %>
+                </div>
+            </div>
+        </nav>
+    </header>

@@ -1,0 +1,13 @@
+<%- include("../partials/header") %>
+
+<h1>Add a new comment to <%= animal.name %></h1>
+
+<form action="/animals/<%= animal._id %>/comments" method="POST">
+    <textarea name="comment[content]" id="" cols="30" rows="10"></textarea>
+    <button>Submit</button>
+</form>
+
+<a href="/animals">Back</a>
+
+
+<%- include("../partials/footer") %>

@@ -1,0 +1,32 @@
+<%- include("../partials/header") %>
+<main class="container mt-5">
+    <h1><%= animal.name %></h1>
+
+    <img src="<%= animal.image %>" alt="Animal IMage">
+    <p><%= animal.description %></p>
+    <p>Submited by <%= animal.author.username %></p>
+
+    <% if(user && animal.author.id.equals(user._id)) { %>
+
+    <a href="/animals/<%= animal._id %>/edit">Edit</a>
+    <form action="/animals/<%= animal._id %>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
+    <% } %>
+
+    <% for(const comment of animal.comments){ %>
+    <p><%= comment.author.username %> - <%= comment.content %></p>
+
+    <% if(user && comment.author.id.equals(user._id)) { %>
+    <a href="/animals/<%= animal._id %>/comments/<%= comment._id %>/edit">Edit comment</a>
+    <form action="/animals/<%= animal._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+        <button>Delete Comment</button>
+    </form>
+    <% } 
+ } %>
+
+    <a href="/animals/<%= animal._id %>/comments/new">Add a new comment</a>
+    <a href="/animals">Back</a>
+</main>
+
+<%- include("../partials/footer") %>
