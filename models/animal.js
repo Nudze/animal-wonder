@@ -1,17 +1,22 @@
 const mongoose = require("mongoose");
 
 const animalSchema = new mongoose.Schema({
-	name        : String,
-	image       : String,
-	description : String,
-	author      : {
+	name            : String,
+	scientific_name : String,
+	diet            : String,
+	life_span       : String,
+	size            : String,
+	image           : String,
+	description     : String,
+	images          : [ { type: String } ],
+	author          : {
 		id       : {
 			type : mongoose.Schema.Types.ObjectId,
 			ref  : "User"
 		},
 		username : String
 	},
-	comments    : [
+	comments        : [
 		{
 			type : mongoose.Schema.Types.ObjectId,
 			ref  : "Comment"

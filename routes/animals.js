@@ -25,6 +25,7 @@ router.get("/", async (req, res) => {
 
 // CREATE - add a new animal
 router.post("/", isLoggedIn, async (req, res) => {
+	console.log(req.body.animal);
 	try {
 		const animal = await Animal.create(req.body.animal);
 		animal.author = {

@@ -6,11 +6,11 @@
     <p>Explore these fascinating creatures.</p>
     <a href="/animals/new" class="btn btn-info btn-large">Add New Animal</a>
 </div>
-<div class="card-columns">
+<div class="card-columns mx-5">
     <% for(const animal of animals) { %>
     <div class="card">
         <img src="<%= animal.image %>" class="card-img-top" alt="">
-        <h2 class="card-title text-center"><%= animal.name %></h2>
+        <h2 class="card-title text-center my-3"><%= animal.name %></h2>
 
         <a href="/animals/<%= animal._id %>" class="btn btn-info btn-block">More Info</a>
     </div>
